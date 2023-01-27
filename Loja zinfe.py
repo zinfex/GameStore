@@ -2,7 +2,6 @@ import os
 import webbrowser
 op = 0
 while op != 4:
-    
     print('=-' * 15)
     print('         \033[31mLOJA ZINFE\033[m')
     print('=-' * 15)
@@ -13,9 +12,20 @@ while op != 4:
     print('[ 4 ] Sair')
     op = int(input('Escolha sua opção: '))
     os.system('cls')
-
     if op == 1:
         print('   \033[32mJOGOS XBOX ONE\033[m')                   #XBOX
+        print('[ 1 ] Forza Horzin 5')
+        print('[ 2 ] Red Dead Redemption 2')
+        print('[ 3 ] Far Cry 6')
+        op1 = int(input('Escolha o jogo para a compra: '))
+        if op1 == 1:
+            webbrowser.open('https://www.xbox.com/pt-br/games/store/forza-horizon-5-edicao-padrao/9nkx70bbcdrn')
+        elif op1 == 2:
+            webbrowser.open('https://www.xbox.com/pt-br/games/store/red-dead-redemption-2/9n2zdn7nwqkv')
+        elif op1 == 3:
+            webbrowser.open('https://www.xbox.com/pt-BR/games/far-cry-6')
+        print('\033[33mAbrindo navegador...\033[m')
+        exit()
     elif op == 2:
         print('   \033[36mGIFT CARDS\033[m')                       #GIFT CARD
         print('[ 1 ] Xbox Live Gold')
@@ -43,9 +53,8 @@ while op != 4:
             elif valor == 200:
                 webbrowser.open('https://www.kabum.com.br/produto/266929/gift-card-xbox-200-reais-codigo-digital')
             else:
-                print('\033[31mNão temos este valor disponível\033[m')
+                print('\033[31mEste valor não está disponível\033[m')
                 exit()
-                
     elif op == 3:
         print('   \033[34mJOGOS PS4 e PS5\033[m')               #PS4
         print('[ 1 ] God of War Ragnarok')
@@ -58,6 +67,7 @@ while op != 4:
             webbrowser.open('https://store.playstation.com/pt-br/product/UP1004-PPSA03420_00-GTAVCROSSGENBUND')
         if op3 == 3:
             webbrowser.open('https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/')
-    
+        print('\033[33mAbrindo navegador...\033[m')
+        exit()
     elif op != 4:
         print('\033[31mOpção inválida!, Tente novamente\033[m')
