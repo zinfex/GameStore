@@ -13,24 +13,32 @@ while op != 4:
     op = int(input('Escolha sua opção: '))
     os.system('cls')
     if op == 1:
-        print('   \033[32mJOGOS XBOX ONE\033[m')                   #XBOX
+        print('   \033[32mJOGOS XBOX ONE\033[m')                   #------XBOX------
         print('[ 1 ] Forza Horzin 5')
         print('[ 2 ] Red Dead Redemption 2')
         print('[ 3 ] Far Cry 6')
+        print('[ 4 ] Voltar')
         op1 = int(input('Escolha o jogo para a compra: '))
         if op1 == 1:
             webbrowser.open('https://www.xbox.com/pt-br/games/store/forza-horizon-5-edicao-padrao/9nkx70bbcdrn')
+            print('\033[33mAbrindo navegador...\033[m')
         elif op1 == 2:
             webbrowser.open('https://www.xbox.com/pt-br/games/store/red-dead-redemption-2/9n2zdn7nwqkv')
+            print('\033[33mAbrindo navegador...\033[m')
         elif op1 == 3:
             webbrowser.open('https://www.xbox.com/pt-BR/games/far-cry-6')
-        print('\033[33mAbrindo navegador...\033[m')
-        exit()
+            print('\033[33mAbrindo navegador...\033[m')
+        elif op1 == 4:
+            print('Voltando...')
+        else:
+            print('\033[31mOpção inválida!, Tente novamente\033[m')
+            exit()
     elif op == 2:
-        print('   \033[36mGIFT CARDS\033[m')                       #GIFT CARD
+        print('   \033[36mGIFT CARDS\033[m')                       #-----GIFT CARD------
         print('[ 1 ] Xbox Live Gold')
-        print('[ 2 ] PlayStation Store')
-        print('[ 3 ] Steam Gift Card')
+        print('[ 2 ] PlayStation Store (Desenvolvimento)')
+        print('[ 3 ] Steam Gift Card (Desenvolvimento)')
+        print('[ 4 ] Voltar')
         op2 = int(input('Escolha o Gift Card para a compra: '))
         if op2 == 1:
             valor = int(input('Digite o valor do Gift Card que deseja comprar: R$'))
@@ -54,20 +62,27 @@ while op != 4:
                 webbrowser.open('https://www.kabum.com.br/produto/266929/gift-card-xbox-200-reais-codigo-digital')
             else:
                 print('\033[31mEste valor não está disponível\033[m')
-                exit()
+                exit()      
     elif op == 3:
-        print('   \033[34mJOGOS PS4 e PS5\033[m')               #PS4
+        print('   \033[34mJOGOS PS4 e PS5\033[m')               #------PS4-----
         print('[ 1 ] God of War Ragnarok')
         print('[ 2 ] Grand Theft Auto V')
         print('[ 3 ] Spider-Man: Miles Morales')
+        print('[ 4 ] Voltar')
         op3 = int(input('Escolha o jogo que deseja comprar: '))
         if op3 == 1:
             webbrowser.open('https://www.playstation.com/pt-br/games/god-of-war-ragnarok/')
+            print('\033[33mAbrindo navegador...\033[m')
         if op3 == 2:
             webbrowser.open('https://store.playstation.com/pt-br/product/UP1004-PPSA03420_00-GTAVCROSSGENBUND')
+            print('\033[33mAbrindo navegador...\033[m')
         if op3 == 3:
             webbrowser.open('https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/')
-        print('\033[33mAbrindo navegador...\033[m')
-        exit()
+            print('\033[33mAbrindo navegador...\033[m')
+        if op3 == 4:
+            print('Voltando...')
+        else:
+            print('\033[31mOpção inválida!, Tente novamente\033[m')
+            exit()
     elif op != 4:
         print('\033[31mOpção inválida!, Tente novamente\033[m')
