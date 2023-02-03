@@ -50,47 +50,8 @@ while op != 5:          #MENU
             os.system('cls')
             print('\033[31mOpção inválida!, Tente novamente\033[m')
     elif op == 2: #-----GIFT CARD------
-        print('   \033[36mGIFT CARDS\033[m')                       
-        print('[ 1 ] Xbox Live Gold')
-        print('[ 2 ] PlayStation Store (Desenvolvimento)')
-        print('[ 3 ] Steam Gift Card (Desenvolvimento)')
-        print('[ 4 ] Voltar')
-        op2 = int(input('Escolha o Gift Card para a compra: '))
-        if op2 == 1:
-            valor = int(input('Digite o valor do Gift Card que deseja comprar: R$'))
-            if saldo < valor:
-                os.system('cls')
-                print('\033[31mSaldo insuficiente\033[m')
-            elif valor == 5:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266963/gift-card-xbox-5-reais-codigo-digital')
-            elif valor == 10:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266964/gift-card-xbox-10-reais-codigo-digital')
-            elif valor == 20:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266969/gift-card-xbox-20-reais-codigo-digital')
-            elif valor == 25:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266970/gift-card-xbox-25-reais-codigo-digital')
-            elif valor == 40:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266971/gift-card-xbox-40-reais-codigo-digital')
-            elif valor == 50:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266930/gift-card-xbox-50-reais-codigo-digital')
-            elif valor == 60:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266972/gift-card-xbox-60-reais-codigo-digital')
-            elif valor == 100:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open('https://www.kabum.com.br/produto/266928/gift-card-xbox-100-reais-codigo-digital')
-            else:
-                os.system('cls')
-                print('\033[31mEste valor não está disponível\033[m')
-            os.system('cls')      
-        if op2 == 4:
-            os.system('cls')
+        os.system('cls')
+        print('Em desenvolvimento')                       
     elif op == 3: #------PS4-----
         print('   \033[34mJOGOS PS4 e PS5\033[m')              
         print('[ 1 ] God of War Ragnarok [R$349,90]')
