@@ -8,7 +8,7 @@ while op != 5:          #MENU
     print('=-' * 15)
     print('        \033[31mMENU PRODUTO\033[m')
     print('[ 1 ] Comprar jogos \033[32mXBOX ONE\033[m')          
-    print('[ 2 ] Comprar \033[36mGIFT CARDS\033[m  (Desenvolvimento)')
+    print('[ 2 ] Comprar \033[36mGIFT CARDS\033[m')
     print('[ 3 ] Comprar jogos \033[34mPS4 e PS5\033[m')
     print('[ 4 ] Depositar saldo')
     print('[ 5 ] Fechar')
