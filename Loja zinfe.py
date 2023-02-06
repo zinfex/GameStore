@@ -1,9 +1,10 @@
 import os
 import webbrowser
-op = saldo = 0
+op = saldo = nsaldo = 0
 while op != 5:          #MENU
     print('=-' * 15)
     print('         \033[31mLOJA ZINFE\033[m')
+    print(f'      \033[32mSeu saldo: R${nsaldo:.2f}\033[m')
     print('=-' * 15)
     print('        \033[31mMENU PRODUTO\033[m')
     print('[ 1 ] Comprar jogos \033[32mXBOX ONE\033[m')          
@@ -21,7 +22,7 @@ while op != 5:          #MENU
         print('[ 4 ] Voltar')
         op1 = int(input('Escolha o jogo para a compra: '))
         if op1 == 1:
-            if saldo < 249.00:
+            if nsaldo < 249.00:
                 os.system('cls')
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
@@ -29,7 +30,7 @@ while op != 5:          #MENU
                 print('\033[32mCompra realizada com sucesso\033[m')
                 print('\033[33mAbrindo navegador...\033[m')
         elif op1 == 2:
-            if saldo < 249.95:
+            if nsaldo < 249.95:
                 os.system('cls')
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
@@ -37,7 +38,7 @@ while op != 5:          #MENU
                 print('\033[32mCompra realizada com sucesso\033[m')
                 print('\033[33mAbrindo navegador...\033[m')
         elif op1 == 3:
-            if saldo < 279.95:
+            if nsaldo < 279.95:
                 os.system('cls')
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
@@ -50,8 +51,45 @@ while op != 5:          #MENU
             os.system('cls')
             print('\033[31mOpção inválida!, Tente novamente\033[m')
     elif op == 2: #-----GIFT CARD------
-        os.system('cls')
-        print('Em desenvolvimento')                       
+        print('   \033[36mGIFT CARDS\033[m')                       
+        print('[ 1 ] Xbox Live Gold')
+        print('[ 2 ] PlayStation Store (Desenvolvimento)')
+        print('[ 3 ] Steam Gift Card (Desenvolvimento)')
+        print('[ 4 ] Voltar')
+        op2 = int(input('Escolha o Gift Card para a compra: '))
+        if op2 == 1:
+            valor = int(input('Digite o valor do Gift Card que deseja comprar: R$'))
+            if nsaldo < valor:
+                os.system('cls')
+                print('\033[31mSaldo insuficiente\033[m')
+            elif valor == 5:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266963/gift-card-xbox-5-reais-codigo-digital')
+            elif valor == 10:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266964/gift-card-xbox-10-reais-codigo-digital')
+            elif valor == 20:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266969/gift-card-xbox-20-reais-codigo-digital')
+            elif valor == 25:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266970/gift-card-xbox-25-reais-codigo-digital')
+            elif valor == 40:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266971/gift-card-xbox-40-reais-codigo-digital')
+            elif valor == 50:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266930/gift-card-xbox-50-reais-codigo-digital')
+            elif valor == 60:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266972/gift-card-xbox-60-reais-codigo-digital')
+            elif valor == 100:
+                print('Compra realizada, Abrindo navegador padrão...')
+                webbrowser.open('https://www.kabum.com.br/produto/266928/gift-card-xbox-100-reais-codigo-digital')
+            else:
+                print('\033[31mEste valor não está disponível\033[m')  
+        if op2 == 4:
+            os.system('cls')
     elif op == 3: #------PS4-----
         print('   \033[34mJOGOS PS4 e PS5\033[m')              
         print('[ 1 ] God of War Ragnarok [R$349,90]')
@@ -60,7 +98,7 @@ while op != 5:          #MENU
         print('[ 4 ] Voltar')
         op3 = int(input('Escolha o jogo que deseja comprar: '))
         if op3 == 1:
-            if saldo < 349.90:
+            if nsaldo < 349.90:
                 os.system('cls')
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
@@ -68,7 +106,7 @@ while op != 5:          #MENU
                 print('\033[32mCompra realizada com sucesso\033[m')
                 print('\033[33mAbrindo navegador...\033[m')
         elif op3 == 2:
-            if saldo < 299.90:
+            if nsaldo < 299.90:
                 os.system('cls')
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
@@ -76,7 +114,7 @@ while op != 5:          #MENU
                 print('\033[32mCompra realizada com sucesso\033[m')
                 print('\033[33mAbrindo navegador...\033[m')
         elif op3 == 3:
-            if saldo < 99.80:
+            if nsaldo < 99.80:
                 os.system('cls')
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
@@ -90,6 +128,8 @@ while op != 5:          #MENU
             print('\033[31mOpção inválida!, Tente novamente\033[m')
     elif op == 4: #----DEPOSITAR----
         saldo = float(input('Quanto você deseja depositar no app? R$'))
+        nsaldo += saldo
         print(f'\033[32mVocê depositou R${saldo:.2f}\033[m')
+
     elif op != 5:
         print('\033[31mOpção inválida!, Tente novamente\033[m')
