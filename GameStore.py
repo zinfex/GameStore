@@ -2,7 +2,7 @@ import os
 import webbrowser
 op = saldo = nsaldo = start = 0
 
-while start != 1 and 2:           # INICIALIZAÇÃO
+while start != 1 and 2:           # [ 1 ] INICIALIZAÇÃO
     print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
     start = int(input('Sua opção: '))
     if start == 2:
@@ -11,9 +11,9 @@ while start != 1 and 2:           # INICIALIZAÇÃO
     if start != 1 and 2:
         print('\033[31mOpção inválida!, Tente novamente\033[m')
 
-while op != 5:  # MENU
+while op != 5:  # [ 2 ] MENU
     print('=-' * 15)
-    print('         \033[31mLOJA ZINFE\033[m')
+    print('      \033[31mGAME STORE ZINFEX\033[m')
     print(f'      \033[32mSeu saldo: R${nsaldo:.2f}\033[m')
     print('=-' * 15)
     print('        \033[31mMENU PRODUTO\033[m')
@@ -25,7 +25,7 @@ while op != 5:  # MENU
     op = int(input('Escolha sua opção: '))
     os.system('cls')
 
-    if op == 1:  # ------XBOX------
+    if op == 1:  # ------ [ 2.1 ] XBOX------
         print('   \033[32mJOGOS XBOX ONE\033[m')
         print('[ 1 ] Forza Horizon 5  [R$249,00] ')
         print('[ 2 ] Red Dead Redemption 2 [R$249,95]')
@@ -64,7 +64,7 @@ while op != 5:  # MENU
             os.system('cls')
             print('\033[31mOpção inválida!, Tente novamente\033[m')
 
-    elif op == 2:  # -----GIFT CARD------
+    elif op == 2:  # ----- [ 2.1 ] GIFT CARD------
         print('   \033[36mGIFT CARDS\033[m')
         print('[ 1 ] Xbox Live Gold')
         print('[ 2 ] PlayStation Store (Desenvolvimento)')
@@ -114,7 +114,7 @@ while op != 5:  # MENU
         if op2 == 4:
             os.system('cls')
 
-    elif op == 3:  # ------PS4-----
+    elif op == 3:  # ------ [ 2.1 ] PS4-----
         print('   \033[34mJOGOS PS4 e PS5\033[m')
         print('[ 1 ] God of War Ragnarok [R$349,90]')
         print('[ 2 ] Grand Theft Auto V [R$R$299,90]')
@@ -154,7 +154,7 @@ while op != 5:  # MENU
             os.system('cls')
             print('\033[31mOpção inválida!, Tente novamente\033[m')
 
-    elif op == 4:  # ----DEPOSITAR----
+    elif op == 4:  # ---- [ 2.1 ] DEPOSITAR----
         saldo = float(input('Quanto você deseja depositar no app? R$'))
         nsaldo += saldo
         print(f'\033[32mVocê depositou R${saldo:.2f}\033[m')
