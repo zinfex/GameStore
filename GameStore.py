@@ -2,13 +2,13 @@ import os
 import webbrowser
 op = saldo = nsaldo = start = 0
 
-while start != 1 and 2:           # [ 1 ] INICIALIZAÇÃO
+while start != 1:           # [ 1 ] INICIALIZAÇÃO
     print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
     start = int(input('Sua opção: '))
     if start == 2:
         exit()
     os.system('cls')
-    if start != 1 and 2:
+    if start != 1:
         print('\033[31mOpção inválida!, Tente novamente\033[m')
 
 while op != 5:  # [ 2 ] MENU
