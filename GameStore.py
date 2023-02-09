@@ -1,11 +1,16 @@
 import os
 import webbrowser
-op = saldo = nsaldo = 0
-print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
-start = int(input('Sua opção: '))
-if start == 2:
-    exit()
-os.system('cls')
+op = saldo = nsaldo = start = 0
+
+while start != 1 and 2:           # INICIALIZAÇÃO
+    print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
+    start = int(input('Sua opção: '))
+    if start == 2:
+        exit()
+    os.system('cls')
+    if start != 1 and 2:
+        print('\033[31mOpção inválida!, Tente novamente\033[m')
+
 while op != 5:  # MENU
     print('=-' * 15)
     print('         \033[31mLOJA ZINFE\033[m')
@@ -19,6 +24,7 @@ while op != 5:  # MENU
     print('[ 5 ] Fechar')
     op = int(input('Escolha sua opção: '))
     os.system('cls')
+
     if op == 1:  # ------XBOX------
         print('   \033[32mJOGOS XBOX ONE\033[m')
         print('[ 1 ] Forza Horizon 5  [R$249,00] ')
@@ -57,6 +63,7 @@ while op != 5:  # MENU
         else:
             os.system('cls')
             print('\033[31mOpção inválida!, Tente novamente\033[m')
+
     elif op == 2:  # -----GIFT CARD------
         print('   \033[36mGIFT CARDS\033[m')
         print('[ 1 ] Xbox Live Gold')
@@ -106,6 +113,7 @@ while op != 5:  # MENU
                 print('\033[31mEste valor não está disponível\033[m')
         if op2 == 4:
             os.system('cls')
+
     elif op == 3:  # ------PS4-----
         print('   \033[34mJOGOS PS4 e PS5\033[m')
         print('[ 1 ] God of War Ragnarok [R$349,90]')
@@ -145,6 +153,7 @@ while op != 5:  # MENU
         else:
             os.system('cls')
             print('\033[31mOpção inválida!, Tente novamente\033[m')
+
     elif op == 4:  # ----DEPOSITAR----
         saldo = float(input('Quanto você deseja depositar no app? R$'))
         nsaldo += saldo
