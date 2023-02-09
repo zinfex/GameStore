@@ -1,4 +1,4 @@
-# Loja-de-Jogos
+# Games Shop
 
 Aprendendo a programar Python a 1 mes.
 Code criado apenas usando fundamentos básicos do Python (Estrutura de repetição) (Estrutura Condicional).
