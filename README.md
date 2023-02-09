@@ -1,7 +1,8 @@
-# Games Shop
+# Game Store
 
-Aprendendo a programar Python a 1 mes.
+Loja de games feita em python
 Code criado apenas usando fundamentos básicos do Python (Estrutura de repetição) (Estrutura Condicional).
+Aprendendo a programar Python a 1 mes.
 
         #ATUALIZADO
 Sistema de [voltar para o menu].               
