@@ -1,6 +1,6 @@
 # Game Store
 
-Loja de games feita em python.
+Loja de games feita em Python.
 Code criado apenas usando fundamentos básicos do Python (Estrutura de repetição) (Estrutura Condicional).
 Aprendendo a programar Python a 1 mes.
 
