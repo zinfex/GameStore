@@ -1,7 +1,7 @@
 import os
 import webbrowser
 op = saldo = nsaldo = 0
-print("DIGITE:\n1  PARA  INCIAR\n2  PARA  FECHAR")
+print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
 start = int(input('Sua opção: '))
 if start == 2:
     exit()
