@@ -8,7 +8,7 @@ Aprendendo a programar Python a 1 mes.
 Sistema de [voltar para o menu].               
 Sistema de escolher valor do gift card.                
 Abrir navegador na compra de um produto.
-Sistema de saldo.
+ Sistema de saldo.
 
 
        #EM DESNVOLVIMENTO
