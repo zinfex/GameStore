@@ -2,15 +2,33 @@ import os
 import webbrowser
 op = saldo = nsaldo = start = 0
 
-while start != 1:           # [ 1 ] INICIALIZAÇÃO
-    print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
-    start = int(input('Sua opção: '))
-    if start == 2:
-        exit()
+def clear():
+    """Limpa a tela do console."""
     os.system('cls')
-    if start != 1:
+
+
+def start_menu():
+    """Exibe o menu inicial e aguarda a escolha do usuário."""
+    while True:
+        print("DIGITE:\n[ 1 ] PARA INCIAR\n[ 2 ] PARA FECHAR")
+        start = int(input('Sua opção: '))
+        if start == 2:
+            exit()
+        clear()
+        if start == 1:
+            return
         print('\033[31mOpção inválida!, Tente novamente\033[m')
 
+
+def cobrar(valor):
+    """Cobrar valor do produto, e tirar do saldo"""
+    global nsaldo
+    nsaldo -= valor
+    print(f'\033[32mCompra de R${valor:.2f} realizada com sucesso\033[m')
+    print('\033[33mAbrindo navegador...\033[m')
+
+
+start_menu()
 while op != 5:  # [ 2 ] MENU
     print('=-' * 15)
     print('      \033[31mGAME STORE ZINFEX\033[m')
@@ -23,7 +41,7 @@ while op != 5:  # [ 2 ] MENU
     print('[ 4 ] Depositar saldo')
     print('[ 5 ] Fechar')
     op = int(input('Escolha sua opção: '))
-    os.system('cls')
+    clear()
 
     if op == 1:  # ------ [ 2.1 ] XBOX------
         print('   \033[32mJOGOS XBOX ONE\033[m')
@@ -34,34 +52,29 @@ while op != 5:  # [ 2 ] MENU
         op1 = int(input('Escolha o jogo para a compra: '))
         if op1 == 1:
             if nsaldo < 249.00:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
-                webbrowser.open(
-                    'https://www.xbox.com/pt-br/games/store/forza-horizon-5-edicao-padrao/9nkx70bbcdrn')
-                print('\033[32mCompra realizada com sucesso\033[m')
-                print('\033[33mAbrindo navegador...\033[m')
+                cobrar(249)
+                webbrowser.open('https://www.xbox.com/pt-br/games/store/forza-horizon-5-edicao-padrao/9nkx70bbcdrn')
         elif op1 == 2:
             if nsaldo < 249.95:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
-                webbrowser.open(
-                    'https://www.xbox.com/pt-br/games/store/red-dead-redemption-2/9n2zdn7nwqkv')
-                print('\033[32mCompra realizada com sucesso\033[m')
-                print('\033[33mAbrindo navegador...\033[m')
+                cobrar(249.95)
+                webbrowser.open('https://www.xbox.com/pt-br/games/store/red-dead-redemption-2/9n2zdn7nwqkv')
         elif op1 == 3:
             if nsaldo < 279.95:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
+                cobrar(279.95)
                 webbrowser.open('https://www.xbox.com/pt-BR/games/far-cry-6')
-                print('\033[32mCompra realizada com sucesso\033[m')
-                print('\033[33mAbrindo navegador...\033[m')
         elif op1 == 4:
-            os.system('cls')
+            clear()
         else:
-            os.system('cls')
+            clear()
             print('\033[31mOpção inválida!, Tente novamente\033[m')
 
     elif op == 2:  # ----- [ 2.1 ] GIFT CARD------
@@ -72,47 +85,38 @@ while op != 5:  # [ 2 ] MENU
         print('[ 4 ] Voltar')
         op2 = int(input('Escolha o Gift Card para a compra: '))
         if op2 == 1:
-            valor = int(
-                input('Digite o valor do Gift Card que deseja comprar: R$'))
+            valor = int(input('Digite o valor do Gift Card que deseja comprar: R$'))
             if nsaldo < valor:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo insuficiente\033[m')
             elif valor == 5:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266963/gift-card-xbox-5-reais-codigo-digital')
+                cobrar(5)
+                webbrowser.open('https://www.kabum.com.br/produto/266963/gift-card-xbox-5-reais-codigo-digital')
             elif valor == 10:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266964/gift-card-xbox-10-reais-codigo-digital')
+                cobrar(10)
+                webbrowser.open('https://www.kabum.com.br/produto/266964/gift-card-xbox-10-reais-codigo-digital')
             elif valor == 20:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266969/gift-card-xbox-20-reais-codigo-digital')
+                cobrar(20)
+                webbrowser.open('https://www.kabum.com.br/produto/266969/gift-card-xbox-20-reais-codigo-digital')
             elif valor == 25:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266970/gift-card-xbox-25-reais-codigo-digital')
+                cobrar(25)
+                webbrowser.open('https://www.kabum.com.br/produto/266970/gift-card-xbox-25-reais-codigo-digital')
             elif valor == 40:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266971/gift-card-xbox-40-reais-codigo-digital')
+                cobrar(40)
+                webbrowser.open('https://www.kabum.com.br/produto/266971/gift-card-xbox-40-reais-codigo-digital')
             elif valor == 50:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266930/gift-card-xbox-50-reais-codigo-digital')
+                cobrar(50)
+                webbrowser.open('https://www.kabum.com.br/produto/266930/gift-card-xbox-50-reais-codigo-digital')
             elif valor == 60:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266972/gift-card-xbox-60-reais-codigo-digital')
+                cobrar(60)
+                webbrowser.open('https://www.kabum.com.br/produto/266972/gift-card-xbox-60-reais-codigo-digital')
             elif valor == 100:
-                print('Compra realizada, Abrindo navegador padrão...')
-                webbrowser.open(
-                    'https://www.kabum.com.br/produto/266928/gift-card-xbox-100-reais-codigo-digital')
+                cobrar(100)
+                webbrowser.open('https://www.kabum.com.br/produto/266928/gift-card-xbox-100-reais-codigo-digital')
             else:
                 print('\033[31mEste valor não está disponível\033[m')
         if op2 == 4:
-            os.system('cls')
+            clear()
 
     elif op == 3:  # ------ [ 2.1 ] PS4-----
         print('   \033[34mJOGOS PS4 e PS5\033[m')
@@ -123,35 +127,29 @@ while op != 5:  # [ 2 ] MENU
         op3 = int(input('Escolha o jogo que deseja comprar: '))
         if op3 == 1:
             if nsaldo < 349.90:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
-                webbrowser.open(
-                    'https://www.playstation.com/pt-br/games/god-of-war-ragnarok/')
-                print('\033[32mCompra realizada com sucesso\033[m')
-                print('\033[33mAbrindo navegador...\033[m')
+                cobrar(349.90)
+                webbrowser.open('https://www.playstation.com/pt-br/games/god-of-war-ragnarok/')
         elif op3 == 2:
             if nsaldo < 299.90:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
-                webbrowser.open(
-                    'https://store.playstation.com/pt-br/product/UP1004-PPSA03420_00-GTAVCROSSGENBUND')
-                print('\033[32mCompra realizada com sucesso\033[m')
-                print('\033[33mAbrindo navegador...\033[m')
+                cobrar(299.90)
+                webbrowser.open('https://store.playstation.com/pt-br/product/UP1004-PPSA03420_00-GTAVCROSSGENBUND')
         elif op3 == 3:
             if nsaldo < 99.80:
-                os.system('cls')
+                clear()
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
-                webbrowser.open(
-                    'https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/')
-                print('\033[32mCompra realizada com sucesso\033[m')
-                print('\033[33mAbrindo navegador...\033[m')
+                cobrar(99.80)
+                webbrowser.open('https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/')
         elif op3 == 4:
-            os.system('cls')
+            clear()
         else:
-            os.system('cls')
+            clear()
             print('\033[31mOpção inválida!, Tente novamente\033[m')
 
     elif op == 4:  # ---- [ 2.1 ] DEPOSITAR----
