@@ -1,0 +1,22 @@
+<\PROGRAMA BÁSICO DE LOJA DE GAMES FEITO POR ZINFE\>
+
+
+     ---------- INSTRUÇÕES ----------        
+
+    - Bibliotecas:
+        (from ulti import *):
+            importar todas funções e modulos de outros arquivos
+        (import webbrowser):
+            acessar links do Browser através de comandos
+
+    - Variáveis:
+        (start):
+            Inicialização do programa(para carregar cores)
+        (op):
+            (op1, op2, op3,) Utilizada para sistema de escolha de opções do usuário
+        (saldo):
+            Saldo fixo do usuário no sistema de dinheiro
+        (nsaldo):
+            Novo saldo fixo do usuário
+        (valor):
+            definir valor do gift card escolhido pelo usuário
