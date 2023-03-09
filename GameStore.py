@@ -1,7 +1,16 @@
+
 import webbrowser
 from ulti import *
 
 op = saldo = nsaldo = start = 0
+
+def cobrar(valor=0):
+    """Cobrar valor do produto e tira do saldo do usuário 
+        E imprimi a mensagem de compra"""    
+    global nsaldo
+    nsaldo -= valor
+    print(f'\033[32mCompra de R${valor:.2f} realizada com sucesso\033[m')
+    print('\033[33mAbrindo navegador...\033[m')
 
 start_menu()
 
@@ -132,8 +141,7 @@ while op != 5:  # [ 2 ] MENU
                 print('\033[31mSaldo Insuficiente\033[m')
             else:
                 cobrar(99.80)
-                webbrowser.open(
-                    'https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/')
+                webbrowser.open('https://www.playstation.com/pt-br/games/marvels-spider-man-miles-morales/')
         elif op3 == 4:
             clear()
         else:
